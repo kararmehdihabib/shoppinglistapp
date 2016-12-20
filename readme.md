@@ -1,4 +1,4 @@
-Shopping List App:
+<h1>Shopping List App:</h1>
 
 Functionalities:
 1. Add Products
