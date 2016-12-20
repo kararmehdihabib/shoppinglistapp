@@ -9,7 +9,6 @@ RewriteEngine On
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteRule ^(.*)$ index.php [QSA,L]
 
-#Try the new rules from https://www.slimframework.com/docs/start/web-servers.html
 #RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
