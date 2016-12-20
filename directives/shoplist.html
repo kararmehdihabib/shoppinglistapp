@@ -1,0 +1,37 @@
+<br>
+<br>
+<h2>Shopping Lists</h2>
+
+<div ng-controller="ShoppingListCtrl">
+<div ng-repeat="list in shoppingListName track by $index">
+<br>
+<h3>{{list}} <button class="btn btn-danger" ng-click="Delete_List(list)">Delete List<span class="glyphicon glyphicon-trash"></span></button><a href="#/" class="btn">Add Products</a></h3>
+
+
+
+
+<table class="table table-condensed" >
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Information</th>
+      <th>Option</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="res in listWithItem[list]">
+      <td>{{res.product_name}}</td>
+      <td>{{res.information}}</td>
+      <td><button class="btn btn-danger" ng-click="Delete_Prod(res.productid, res.shoplist_name)">Delete<span class="glyphicon glyphicon-trash"></span></button</td>
+    </tr>
+	
+  </tbody>
+</table>
+
+
+</div>
+<br>
+<br>
+<br>
+<a class="btn btn-primary" href="#/NewShopList">Add New Shopping List</a>
+</div>

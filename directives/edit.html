@@ -1,0 +1,30 @@
+<br>
+<br>
+<h2>Edit Product</h2>
+<br>
+<br>
+<div class="row" ng-controller='ProductEditCtrl'>
+  <div class="col-md-6">
+  
+  <form novalidate ng-repeat="product in ProductDetail" name="AddNewForm" id="add-new-form" method="post" action="">
+    <input type="hidden" ng-model="product.id" value="{{product.id}}" />
+     <div class="form-group">
+      <label>Product Name</label>
+      <input class="form-control" type="text" ng-model="product.product_name" value="{{product.product_name}}" required />
+    </div>
+    <div class="form-group">
+      <label>Information</label>
+      <input class="form-control" type="text" ng-model="product.information" value="{{product.information}}" required />
+    </div>
+<br>
+	<br>
+    <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(product)" id="add-new-btn" ng-click="Update_Product(product)">Update
+    <span class="glyphicon glyphicon-floppy-disk"></span></button>
+	
+    <button class="btn btn-danger" ng-click="Delete_Product(product)">Delete <span class="glyphicon glyphicon-trash"></span></button>
+    <a href="#/" class="btn">Cancel</a>
+
+  </form>
+
+</div>
+</div>

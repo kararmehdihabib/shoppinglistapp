@@ -1,0 +1,24 @@
+<br>
+<br>
+<h2>New Shopping List</h2>
+<br>
+<br>
+<div class="row" ng-controller="ShopListAddCtrl">
+<div class="col-md-6">
+
+	<form name="AddNewShopForm" id="add-new-shop-form" method="post" action="">
+	 
+	  <div class="form-group">
+	  	<label for="name">List Name</label>
+	  	<input class="form-control" type="text" ng-model="shoplist.Name" />
+	  </div>
+
+	 
+	  <br>
+	  <br>
+	  <button class="btn btn-primary" ng-disabled="AddNewShopForm.$invalid || isUnchanged(shoplist)" id="add-new-btn" ng-click="New_ShopList(shoplist)">Save</button>
+	  <a href="#/" class="btn">Back to Products</a>
+	</form>
+
+</div>
+</div>

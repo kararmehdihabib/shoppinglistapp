@@ -1,0 +1,39 @@
+<br>
+<br>
+<h2>Products</h2>
+<br>
+<br>
+<div ng-controller="ProductListCtrl">
+ <div class="form-group">
+	<h4>Select Shopping List</h4>  	
+	  	<select ng-model="selectedProduct.selectedList" 
+            data-ng-options="ListName for ListName in shoppingListName">
+      <option value="">Select List</option>
+    </select>
+	  </div>
+	  <br>
+	  <br>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Information</th>
+      <th>Option</th>
+	  <th>Add to List</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="res in products">
+      <td>{{res.product_name}}</td>
+      <td>{{res.information}}</td>
+      <td><a href="#/UpdateProduct/{{res.id}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></button></td>
+	  <td><button class="btn btn-primary"  id="add-new-btn" ng-click="AddToCart(selectedProduct, res.id)">Add To List</button></td>
+    </tr>
+	
+  </tbody>
+</table>
+<br>
+<br>
+<a class="btn btn-primary" href="#/NewProduct">Add New Product</a>
+ 
+</div>

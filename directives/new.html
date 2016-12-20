@@ -1,0 +1,28 @@
+<br>
+<br>
+<h2>New Product</h2>
+<br>
+<br>
+<div class="row" ng-controller="ProductAddCtrl">
+<div class="col-md-6">
+
+	<form name="AddNewForm" id="add-new-form" method="post" action="">
+	 
+	  <div class="form-group">
+	  	<label for="name">Product Name</label>
+	  	<input class="form-control" type="text" ng-model="product.product_name" required />
+	  </div>
+
+	  <div class="form-group">
+	  	<label for="name">Information</label>
+	  	<input class="form-control" type="text" ng-model="product.information" required />
+	  </div>
+	  <br>
+	  <br>
+	  <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(product)" id="add-new-btn" ng-click="New_Product(product)">Save</button>
+	  <a href="#/" class="btn">Cancel</a>
+	</form>
+
+</div>
+</div>
+
