@@ -33,7 +33,6 @@ app.controller('ProductListCtrl', [
   function($scope, $http, $location) {
    $http.get('api/Products').success(function(data) {
     $scope.products = data;
-    console.log($scope.products);
    });
 
    //Retrieving shoppinglist names to view it in the dropdown
@@ -44,7 +43,6 @@ app.controller('ProductListCtrl', [
      shoppingListName.push(shoppinglistName[i].list_name);
     }
     $scope.shoppingListName = shoppingListName;
-    console.log($scope.shoppingListName);
    });
 
    $scope.master = {};
@@ -57,7 +55,6 @@ app.controller('ProductListCtrl', [
     } else {
 
      selectedProduct.id = id;
-     console.log(selectedProduct);
      $http.post('api/addToList', selectedProduct).success(function() {
       $scope.done = true;
       $scope.activePath = $location.path('/');
@@ -80,19 +77,16 @@ app.controller('ProductListCtrl', [
      shoppingListName.push(shoppinglistName[i].list_name);
     }
     $scope.shoppingListName = shoppingListName;
-    console.log($scope.shoppingListName);
    });
    //Retrieving shopping lists with added product
    $http.get('api/Shoppinglists').success(function(data) {
     $scope.shoppinglists = data;
-    console.log(data);
     $scope.listWithItem = _.groupBy($scope.shoppinglists, function(item) {
      return item["shoplist_name"]
     });
    });
    //function to delete a shopping list entirely
    $scope.Delete_List = function(name) {
-    console.log(name);
     var deleteList = confirm('Are you absolutely sure you want to delete?');
     if (deleteList) {
      $http.delete('api/ShoppinglistsName/' + name);
@@ -101,7 +95,6 @@ app.controller('ProductListCtrl', [
    };
    //function to delete a product from a shopping list
    $scope.Delete_Prod = function(pid, shoplist_name) {
-    console.log(pid + shoplist_name);
     var deleteProd = confirm('Are you absolutely sure you want to delete?');
     if (deleteProd) {
      $http.delete('api/ShoppinglistsName/' + pid + '/' + shoplist_name);
@@ -119,7 +112,6 @@ app.controller('ProductListCtrl', [
    $scope.activePath = null;
 
    $scope.New_Product = function(product, AddNewForm) {
-    console.log(product);
 
     $http.post('api/New_Product', product).success(function() {
      $scope.reset();
@@ -144,7 +136,6 @@ app.controller('ProductListCtrl', [
    $scope.activePath = null;
 
    $scope.New_ShopList = function(shoplist, AddNewShopForm) {
-    console.log(shoplist);
     alert("New Shopping List Created");
     $scope.activePath = $location.path('/');
     $http.post('api/New_ShoppingList', shoplist).success(function() {
@@ -185,7 +176,6 @@ app.controller('ProductListCtrl', [
    };
    //function for deleting the product from the database
    $scope.Delete_Product = function(product) {
-    console.log(product);
     var deleteProduct = confirm('Are you absolutely sure you want to delete?');
     if (deleteProduct) {
      $http.delete('api/Products/' + product.id);
