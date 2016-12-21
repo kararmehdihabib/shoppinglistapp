@@ -6,7 +6,7 @@
 <li>2. Edit or Delete Products</li>
 <li>3. Create new shopping list</li>
 <li>4. Add products to a shopping list</li>
-<li>5. Delete a rpoduct from a shopping list</li>
+<li>5. Delete a product from a shopping list</li>
 </ul>
 
 <h3>Technology Used:</h3>
