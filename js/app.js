@@ -1,5 +1,5 @@
 var app = angular.module('Shoppinglist', ['ngRoute']);
-
+//Routing config
 app.config(['$routeProvider', function($routeProvider) {
  $routeProvider.
  when('/', {
